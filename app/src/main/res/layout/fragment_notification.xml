@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NotificationFragment">
+
+    <LinearLayout
+        android:layout_marginTop="60dp"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:id="@+id/notificationHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Novedades"
+                android:textSize="24sp"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/num_of_notif"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:textSize="16sp"
+                android:textColor="@android:color/white" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/mark_as_read"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Marcar como leidas"
+            android:textColor="@color/gray" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

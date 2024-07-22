@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/colorButtonPressed"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="93dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="19dp"
+        android:src="@drawable/icono"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="116dp"
+        android:layout_marginBottom="26dp"
+        android:text="REGISTRATE A AYUEMPLEN"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombres" />
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Apellidos" />
+
+    <EditText
+        android:id="@+id/editTextText3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Fecha de nacimiento"
+        android:focusable="false" />
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextViewCedula"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cédula"
+        android:inputType="textAutoComplete" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Siguiente"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp" />
+
+
+</LinearLayout>

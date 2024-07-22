@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="navigation_view">
+
+
+    <group>
+<!--        android:checkableBehavior="single">-->
+
+        <item
+            android:id="@+id/ajustes"
+            android:title="Oferta Trabajo"/>
+
+        <item
+            android:id="@+id/opc1"
+
+            android:title="Solicitud Empleo"/>
+        <item
+            android:id="@+id/opc2"
+            android:title="Foto"/>
+        <item
+            android:id="@+id/opc3"
+            android:title="Video"/>
+
+    </group>
+</menu>

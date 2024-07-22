@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".ButtonFragment">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editar Perfil"
+        android:textSize="24sp"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="16dp"/>
+
+    <ImageView
+        android:id="@+id/profile_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_launcher_background"
+        android:contentDescription="Profile Picture"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/select_image_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seleccionar Foto de Perfil"
+        android:layout_gravity="center_horizontal"/>
+
+    <EditText
+        android:id="@+id/update_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Actualiza tu nombre"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/update_surname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Actualiza tu apellido"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/update_birthdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Actualiza tu fecha de nacimiento"
+        android:focusable="false"
+        android:clickable="true"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/update_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ubicación"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/update_descriptionn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Actualiza tu descripción"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/update_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Actualiza tu Numero Telefonico"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar Cambios"
+        android:layout_gravity="end"
+        android:layout_marginTop="32dp"/>
+
+</LinearLayout>
