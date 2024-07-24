@@ -98,7 +98,7 @@ class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
             R.id.nav_opc4 -> openFragment(Opc4Fragment())
 
             R.id.logaut -> {
-                Retrofitclient.apiservice.logout().enqueue(object :Callback<Void> {
+                Retrofitclient.apiService.logout().enqueue(object :Callback<Void> {
                     override fun onResponse(call: Call<Void>, response: Response<Void>) {
                         if(response.isSuccessful){
                             val sharedPreferences = getSharedPreferences("prefs", Context.MODE_PRIVATE)
@@ -114,7 +114,7 @@ class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
 
                     override fun onFailure(call: Call<Void>, t: Throwable) {
                         // Maneja el error de red
-                        Toast.makeText(this@Home, "Network error", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@Home, "Network error: ${t.message}", Toast.LENGTH_SHORT).show()
                     }
                 })
 

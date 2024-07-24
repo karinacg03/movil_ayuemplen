@@ -9,6 +9,7 @@ import retrofit2.http.POST
 interface Apiservice {
     @POST("login")
     fun login(@Body request:Loginrequest):Call<Loginresponse>
+
     @POST ("logout")
     fun logout():Call<Void>
 }

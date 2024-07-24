@@ -40,7 +40,8 @@ class Ingreso : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.ingreso)
-
+        // Inicializar RetrofitClient
+        Retrofitclient.initialize(this)
         // Configurar opciones de inicio de sesión con Google
         /*val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestEmail()
@@ -77,33 +78,34 @@ class Ingreso : AppCompatActivity() {
         accederButton.setOnClickListener {
             val email = findViewById<EditText>(R.id.correo).text.toString()
             val password = findViewById<EditText>(R.id.contraseña).text.toString()
-            Retrofitclient.apiservice.login(Loginrequest(email, password))
+            Retrofitclient.apiService.login(Loginrequest(email, password))
                 .enqueue(object : Callback<Loginresponse> {
                     override fun onResponse(
                         call: Call<Loginresponse>,
                         response: Response<Loginresponse>
                     ) {
                         if (response.isSuccessful) {
-                            // Guarda el token en SharedPreferences
-                            val token = response.body()?.token
-                            val sharedPreferences =
+                            response.body()?.let{
+                                // Guarda el token en SharedPreferences
+                                val token = response.body()?.token
+                                val sharedPreferences = getSharedPreferences("prefs", Context.MODE_PRIVATE)
+                                sharedPreferences.edit().putString("token", token).apply()
 
-                                getSharedPreferences("prefs", Context.MODE_PRIVATE)
-                            sharedPreferences.edit().putString("token", token).apply()
+                                // Navega a la actividad Home
+                                val intent = Intent(this@Ingreso, Home::class.java)
+                                startActivity(intent)
+                                finish()
+                            }
 
-                            // Navega a la actividad Home
-                            val intent = Intent(this@Ingreso, Home::class.java)
-                            startActivity(intent)
-                            finish()
                         } else {
                             // Maneja el error
-                            Toast.makeText(this@Ingreso, "Login failed", Toast.LENGTH_SHORT)
+                            Toast.makeText(this@Ingreso, "Login failed: ${response.message()}", Toast.LENGTH_SHORT)
                                 .show()
                         }
                     }
 
                     override fun onFailure(call: Call<Loginresponse>, t: Throwable) {
-                        Toast.makeText(this@Ingreso, "Network error", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@Ingreso, "Network error ${t.message}", Toast.LENGTH_SHORT).show()
                     }
                 })
 

@@ -1,6 +1,7 @@
 package com.adso.myapplicationsantes.models
 
 data class User(
+    val id: Int,
     val name:String,
     val lastname:String,
     val birthdate:String,
